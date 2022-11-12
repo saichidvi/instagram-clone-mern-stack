@@ -21,6 +21,7 @@ const Signin = () => {
                     M.toast({html: response.data.error, classes:"#c62828 red darken-3"});
                 }
                 else {
+                    console.log({data: response.data})
                     localStorage.setItem("jwt", response.data.token);
                     localStorage.setItem("user", JSON.stringify(response.data.user));
                     dispatch({type:"USER", payload: response.data.user});
