@@ -13,9 +13,11 @@ router.get('/allpost', requireLogin, (req, res) => {
         .then(posts => {
             res.json({ posts: posts });
         })
-        .catch(e => {
-            console.error(e);
-        });
+        // .catch(e => {
+        //     console.error(e);
+        // });
+        .catch((err) => 
+        console.log({errMessage : err.message}))
 });
 
 
@@ -27,9 +29,11 @@ router.get('/getsubscribedposts', requireLogin, (req, res) => {
         .then(posts => {
             res.json({ posts: posts });
         })
-        .catch(e => {
-            console.error(e);
-        });
+        // .catch(e => {
+        //     console.error(e);
+        // });
+        .catch((err) => 
+        console.log({errMessage : err.message}))
 });
 
 
@@ -43,9 +47,11 @@ router.post('/createpost', requireLogin, (req, res) => {
         .then(post => {
             res.json({ post: post, message: "Image Uploaded Successfully!" });
         })
-        .catch(e => {
-            console.log(e);
-        });
+        // .catch(e => {
+        //     console.log(e);
+        // });
+        .catch((err) => 
+        console.log({errMessage : err.message}))
 });
 
 
@@ -55,9 +61,11 @@ router.get('/mypost', requireLogin, (req, res) => {
         .then(myposts => {
             res.json({ myposts: myposts });
         })
-        .catch(e => {
-            console.error(e);
-        });
+        // .catch(e => {
+        //     console.error(e);
+        // });
+        .catch((err) => 
+        console.log({errMessage : err.message}))
 });
 
 
@@ -128,9 +136,11 @@ router.delete('/deletepost/:postId', requireLogin, (req, res) => {
             .then(result => {
                 res.json({ result, message: 'Successfully deleted!' })
             })
-            .catch(e => {
-                console.log(e);
-            });
+            // .catch(e => {
+            //     console.log(e);
+            // });
+            .catch((err) => 
+            console.log({errMessage : err.message}))
         }
     })
 });
@@ -161,9 +171,11 @@ router.delete('/deletecomment/:postId/:commentId', requireLogin, (req, res) => {
                 res.json({ result: post, message: 'Successfully deleted comment!' });
             })
         })
-        .catch(e => {
-            console.log(e);
-        })
+        // .catch(e => {
+        //     console.log(e);
+        // })
+        .catch((err) => 
+        console.log({errMessage : err.message}))
         
     })
 });
@@ -179,9 +191,11 @@ router.post('/likedusers', requireLogin, (req, res) => {
                     res.json({ users })
                 })
         })
-        .catch(e => {
-            console.error(e);
-        });
+        // .catch(e => {
+        //     console.error(e);
+        // });
+        .catch((err) => 
+        console.log({errMessage : err.message}))
 });
 
 
@@ -192,9 +206,11 @@ router.get('/post/:postid', requireLogin, (req, res) => {
     .then(post => {
         res.json({ post: post });
     })
-    .catch(e => {
-        console.error(e);
-    });
+    // .catch(e => {
+    //     console.error(e);
+    // });
+    .catch((err) => 
+     console.log({errMessage : err.message}))
 });
 
 
