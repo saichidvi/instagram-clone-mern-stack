@@ -25,8 +25,8 @@ const Newpassword = () => {
                 setLoading(false);      
             })
             .catch(e =>{
-                setLoading(false);
                 console.log(e);
+                setLoading(false);
             });
         };
 
