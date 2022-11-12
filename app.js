@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 const { MONGOURI } = require('./config/keys');
 const error = require('./middleware/error');
 const cors = require('cors')
+const mongoUrl = "mongodb+srv://saichidvi:saichidvi123@cluster0.vysptyo.mongodb.net/?retryWrites=true&w=majority";
 
-
-mongoose.connect(MONGOURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 mongoose.connection.on('connected', () => {
     console.log('Connected to MongoDB!');
 });
