@@ -48,9 +48,11 @@ router.post('/signup', async (req, res) => {
         
             res.json({ message: "Account Created!" });
         })
-        .catch(e => {
-            console.log(e);
-        })    
+        // .catch(e => {
+        //     console.log(e);
+        // })    
+        .catch((err) => 
+        console.log({errMessage : err.message}));
 });
 
 
@@ -112,10 +114,12 @@ router.post('/resetpassword', (req, res) => {
                         })
                         res.json({ message: "Check your email!" });
                     })
-                    .catch(e => {
-                        console.log(e);
-                    })
-            })
+                    // .catch(e => {
+                    //     console.log(e);
+                    // })
+                    .catch((err) => 
+                    console.log({errMessage : err.message}))
+                })
     });
 });
 
@@ -137,9 +141,11 @@ router.post('/newpassword', (req, res) => {
                         });
                 })
         })
-        .catch(e => {
-            console.log(e);
-        })
+        // .catch(e => {
+        //     console.log(e);
+        // })
+        .catch((err) => 
+        console.log({errMessage : err.message}))
 });
 
 
